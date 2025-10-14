@@ -1,0 +1,52 @@
+
+
+html {
+    height: 100%;
+}
+
+body{
+    display:flex;
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+    background-image: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+
+#telalogin{
+    background-color: #b6dbf4;
+    display:flex;
+    flex-direction: column;
+    border: solid rgb(33, 166, 166) 5px;
+    height: 50%;
+    width: 30%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    padding: 50px;
+
+  font-family: "Zain", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+    
+}
+
+
+#email{
+    width: 40%;
+    margin-bottom: 20px;
+   
+
+
+}
+
+#senha{
+    width: 40%;
+
+
+}
+
+#caminho1{
+    margin-top: 50px;
+}
