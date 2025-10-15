@@ -1,0 +1,125 @@
+/* Estilos Globais */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* --- Cabeçalho (Faixa Preta Superior) --- */
+.top-bar {
+    background-color: #141414;
+    color: white;
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}   
+
+.top-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 30%; 
+    height: 100%;
+    background-image: url('icons/icone_cabecalho.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: right; 
+    transform: scale(1.3); /* ajusta o tamanho da imagem*/
+    transform-origin: right; 
+    z-index: 1; /* coloca a imagem atrás do texto se precisar */
+    opacity: 0.2; 
+}
+
+.top-bar-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.top-bar-text {
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+/* --- Seção Principal (Banner) --- */
+.hero-section {
+    background: linear-gradient(135deg, #480ca8, #4cc9f0); /* Gradiente do Roxo ao Azul */
+    color: white;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Necessário para posicionar a pipoca */
+    min-height: 70vh;
+}
+
+.hero-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem; /* Tamanho grande para o título */
+    line-height: 1;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px; /* Limita a largura do texto */
+    margin-bottom: 30px;
+}
+
+.hero-website {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.movie-poster {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.poster-1 {
+    transform: rotate(-8deg); /* Inclinação do primeiro pôster */
+    position: relative;
+    z-index: 2;
+    margin-right: -50px; /* Sobreposição */
+}
+
+.poster-2 {
+    transform: rotate(8deg); /* Inclinação do segundo pôster */
+}
+
+.popcorn-img {
+    position: absolute;
+    bottom: -50px; /* Metade para fora */
+    right: 5%;
+    width: 200px;
+    z-index: 5;
+}
