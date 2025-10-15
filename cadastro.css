@@ -1,0 +1,55 @@
+body{
+    display:flex;
+    height: 100vh;
+    margin: 0; 
+    padding: 0; 
+    background-image: linear-gradient(to right, #3498db, #2ecc71);
+    overflow-x: hidden; 
+    overflow-y: hidden;  
+    align-items: center;
+     justify-content: center; 
+     flex-direction: column;.
+}
+
+
+.for-group{
+
+}
+
+#nome{
+
+}
+
+#email{
+
+}
+
+#senha{
+
+}
+
+#telefone{
+
+}
+
+#caixacadastro{
+    display: flex;
+    padding: 50px;
+    background-color: white;
+    width: 30%;
+    height: 30%;
+    align-items: center;
+    flex-direction: column;
+    border: solid 20px black;
+
+
+}
+
+#cadastroNome{
+    color: white;
+}
+
+#imagem{
+ position: absolute;   
+ z-index: -1;
+}
