@@ -1,0 +1,225 @@
+html {
+    height: 100%;
+}
+
+body{
+    display:flex;
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+    background-image: linear-gradient(to right, #480ca8, #4cc9f0);
+
+    overflow-x: hidden; 
+    overflow-y: hidden;  
+}
+
+
+    #telalogin{
+        background-color: #b6dbf4;
+        display:flex;
+        flex-direction: column;
+        border: solid rgb(33, 166, 166) 5px;
+        height: 50%;
+        width: 30%;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        padding: 50px;
+        z-index: 2;
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        border-radius: 15px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        
+    }
+
+
+#email{
+    width: 40%;
+    margin-bottom: 20px;
+    
+    
+
+
+}
+#email label {
+    color:black;
+}
+
+#senha{
+    width: 40%;
+
+
+}
+#senha label{
+    color:black;
+}
+
+.caminho1{
+    margin-top: 100px;
+}
+#botao{
+     margin-top: 30px;
+
+}
+
+.nomesite{
+    position: absolute;       /* pode ser movido livremente */
+    font-family: Arial;
+    font-size: 100px;
+    right: 15%;
+    z-index: 2;
+}
+
+.imagemacao{
+    position: absolute;
+    top: 20%;
+    right: 58%;
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+
+}
+
+#imagembordacima{
+    position: absolute;
+
+}
+
+#imagembordabaixo{
+    position: absolute;
+}
+
+#bordadireita{
+    position: fixed;   /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    right: 0;          /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;     /* não excede a altura da tela */
+    object-fit: cover; /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;  
+    background-color: black;
+    }
+
+
+    #bordaesquerda{
+    position: fixed;   /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    left: 0;          /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;     /* não excede a altura da tela */
+    object-fit: cover; /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;  
+    background-color: black;
+}
+
+#bordacima{
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover; 
+    width: 100%; 
+    height: 60px ; 
+    background-color: black;
+     z-index: 10;
+}
+
+
+#bordabaixo{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    object-fit: cover; 
+    width: 100%; 
+    height: 40px ; 
+    background-color: black;
+     z-index: 10;
+}
+
+#alt1  {
+  position: absolute;
+  top: 120px;
+  left: 55%;
+  color: white;
+  font-size: 100px;
+    z-index: 99;
+
+text-shadow: 2px 2px 5px gray;
+}
+
+#alt2 {
+  position: absolute;
+  top: 280px;
+  left: 55%;
+  color: white;
+  font-size: 100px;
+  z-index: 99;
+
+    text-shadow: 2px 2px 5px gray;
+}
+
+
+
+#best1{
+    position: absolute;
+    top: 190px;
+    left: 55%;
+
+    font-size: 80px;
+    z-index: 100;
+
+text-shadow: 2px 2px 5px gray;
+
+
+}
+
+#best2{
+    position: absolute;
+    top: 350px;
+    left: 55%;
+
+    font-size: 80px;
+    z-index: 100;
+
+
+text-shadow: 2px 2px 5px gray;
+}
+
+#compre{
+    position: absolute;
+    left:80px;
+    color:white;
+    z-index: 100;
+
+}
+
+#acaomenor{
+        position: absolute;
+        top:10px;
+        left:40px;
+        height: 30px;
+        width: 30px;
+        z-index: 100;
+}
+
+#www{
+    position: absolute;
+    left:40px;
+    height: 30px;
+    width: 30px;
+    z-index: 100; 
+    color: white;
+}
+
+.entrada{
+    border-radius: 10px;
+    height: 40px;
+}
+
+#imagem{
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+/*---------------------------------------------------------------------------------------------------*/
