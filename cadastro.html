@@ -9,6 +9,9 @@
 <body>
     <img src="imagens/fita.png" id="imagem">
     <h1 id="cadastroNome">Cadastro de Usuário</h1>
+
+    <div id= "bordadireita"></div>
+    <div id= "bordaesquerda"></div>
     
     <form id="caixacadastro" action="/processar_cadastro" method="POST">
         
@@ -26,14 +29,14 @@
 
         <div class="for-group">
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required minlength="6">
+            <input type="password" id="senha" name="senha" minlength="6">
         </div>
 
         <br>
 
         <div class="for-group">
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+            <input type="tel" id="telefone" name="telefone" required>
         </div>
 
         <br>

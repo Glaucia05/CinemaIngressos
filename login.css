@@ -218,13 +218,15 @@ text-shadow: 2px 2px 5px gray;
     height: 40px;
 }
 
-#imagem{
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+input{
+    width:200%;
+
 }
 
 
 input::placeholder {
     color: gray;
+    
 }
 
 /*---------------------------------------------------------------------------------------------------*/

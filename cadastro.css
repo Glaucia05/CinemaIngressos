@@ -3,12 +3,13 @@ body{
     height: 100vh;
     margin: 0; 
     padding: 0; 
-    background-image: linear-gradient(to right, #3498db, #2ecc71);
+    background-image: linear-gradient(to right, #480ca8, #4cc9f0);
     overflow-x: hidden; 
     overflow-y: hidden;  
     align-items: center;
-     justify-content: center; 
-     flex-direction: column;.
+    justify-content: center; 
+    flex-direction: column;
+
 }
 
 
@@ -17,30 +18,34 @@ body{
 }
 
 #nome{
-
+padding: 15px;
 }
 
-#email{
 
+#email{
+padding: 15px;
 }
 
 #senha{
-
+padding: 15px;
 }
 
 #telefone{
-
+ padding: 15px;
 }
 
 #caixacadastro{
     display: flex;
     padding: 50px;
     background-color: white;
-    width: 30%;
-    height: 30%;
-    align-items: center;
+    width: 40%;
+    height: 40%;
+    align-items: right;
     flex-direction: column;
-    border: solid 20px black;
+    border: solid 2px black;
+    border-radius: 10%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
 
 
 }
@@ -50,6 +55,51 @@ body{
 }
 
 #imagem{
- position: absolute;   
+ position: fixed;   
  z-index: -1;
+ width: 150%;
+ height: 150%;
+}
+
+input {
+  width: 200px;
+  height: 1px; 
+  background-color: rgb(246, 237, 255);
+
+}
+
+
+/*Vou aplicar js no botao*/
+button {
+margin-top: 40px;
+width: 200px;
+height: 50px; 
+border: solid 1px blue;
+border-radius: 5%;
+
+}
+
+#bordadireita{
+    position: fixed;   /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    right: 0;          /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;     /* não excede a altura da tela */
+    object-fit: cover; /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;  
+    background-color: black;
+    }
+
+
+    #bordaesquerda{
+    position: fixed;   /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    left: 0;          /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;     /* não excede a altura da tela */
+    object-fit: cover; /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;  
+    background-color: black;
 }
