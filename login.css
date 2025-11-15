@@ -146,6 +146,11 @@ body{
   font-size: 100px;
     z-index: 99;
 
+   font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+
 text-shadow: 2px 2px 5px gray;
 }
 
@@ -156,6 +161,11 @@ text-shadow: 2px 2px 5px gray;
   color: white;
   font-size: 100px;
   z-index: 99;
+
+  font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 
     text-shadow: 2px 2px 5px gray;
 }
@@ -170,6 +180,11 @@ text-shadow: 2px 2px 5px gray;
     font-size: 80px;
     z-index: 100;
 
+   font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+
 text-shadow: 2px 2px 5px gray;
 
 
@@ -183,7 +198,10 @@ text-shadow: 2px 2px 5px gray;
     font-size: 80px;
     z-index: 100;
 
-
+  font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 text-shadow: 2px 2px 5px gray;
 }
 
