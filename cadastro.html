@@ -17,33 +17,33 @@
         
         <div class="for-group">
             <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome" onmouseover="PorCima2(this)" onmouseout="PorFora2(this)" required>
         </div>
 
         <br> <div class="for-group">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" onmouseover="PorCima2(this)" onmouseout="PorFora2(this)"required>
         </div>
 
         <br>
 
         <div class="for-group">
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" minlength="6">
+            <input type="password"  id="senha" name="senha" onmouseover="PorCima2(this)" onmouseout="PorFora2(this)" minlength="6" >
         </div>
 
         <br>
 
         <div class="for-group">
             <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required>
+            <input  type="tel" id="telefone" name="telefone" onmouseover="PorCima2(this)" onmouseout="PorFora2(this)"  required >
         </div>
 
         <br>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" onmouseover="porCima(this)" onmouseout="porFora(this)">Cadastrar</button>
 
     </form>
-
+    <script src="cadastro.js"></script>
 </body>
 </html>
