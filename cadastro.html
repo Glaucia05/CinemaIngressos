@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +16,7 @@
     <div id= "bordadireita"></div>
     <div id= "bordaesquerda"></div>
     
-    <form id="caixacadastro" action="/processar_cadastro" method="POST">
+    <form id="caixacadastro" action="cadastro.php" method="POST">
         
         <div class="for-group">
             <label for="nome">Nome Completo:</label>
@@ -37,12 +40,15 @@
         <div class="for-group">
             <label for="telefone">Telefone:</label>
             <input  type="tel" id="telefone" name="telefone" onmouseover="PorCima2(this)" onmouseout="PorFora2(this)"  required >
-        </div>
+              </div>
+
+            
+      
 
         <br>
 
-        <button type="submit" onmouseover="porCima(this)" onmouseout="porFora(this)">Cadastrar</button>
-
+        <button type="submit" name="submit" onmouseover="porCima(this)" onmouseout="porFora(this)">Cadastrar</button>
+       
     </form>
     <script src="cadastro.js"></script>
 </body>
