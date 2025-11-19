@@ -5,21 +5,17 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>Best Filmes</title>
 
- <!-- SEO básico -->
  <meta name="description" content="Compre seus ingressos e confira os filmes em alta em Curitiba. Clássicos, lançamentos e vencedores do Oscar." />
  <meta name="keywords" content="cinema, ingressos, filmes em cartaz, Curitiba, Best Filmes" />
  <meta name="author" content="Best Filmes" />
 
- <!-- Fontes -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
- <!-- Estilos -->
  <link rel="stylesheet" href="inicio.css" />
 </head>
 <body>
- <!-- Faixa superior -->
  <header class="top-bar" role="banner">
    <div class="top-bar__content">
      <img src="icons/icone_ingresso.png" alt="Ícone de ingresso" class="top-bar__icon" />
@@ -28,7 +24,6 @@
    </div>
  </header>
 
- <!-- Seção principal -->
  <main class="hero" id="inicio">
    <div class="container hero__grid">
      <div class="hero__left">
@@ -42,7 +37,7 @@
          cartaz, clássicos aclamados pelo público e diversos vencedores do Oscar.
        </p>
        <div class="hero__actions">
-         <a href="#ingressos" class="btn btn--primary" aria-label="Comprar ingressos agora">Comprar ingressos</a>
+         <a href="login.html" class="btn btn--primary" aria-label="Comprar ingressos agora">Comprar ingressos</a>
          <a href="#trailers" class="btn btn--outline" aria-label="Ver trailers">Ver trailers</a>
        </div>
      </div>
@@ -59,7 +54,6 @@
    </div>
  </main>
 
- <!-- Seção EM CARTAZ (cards + CRUD via localStorage) -->
  <section id="em-cartaz" class="section section--dark" aria-labelledby="titulo-em-cartaz">
    <div class="container">
      <div class="section__header">
@@ -73,7 +67,6 @@
      <div id="cards" class="cards-grid" aria-live="polite"></div>
    </div>
 
-   <!-- Modal de CRUD -->
    <div class="modal" id="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
      <div class="modal__dialog" role="document">
        <header class="modal__header">
@@ -102,8 +95,11 @@
            <button class="btn btn--outline" type="button" id="modal-cancel">Cancelar</button>
            <button class="btn btn--primary" type="submit">Salvar</button>
          </footer>
+       </form>
+     </div>
+   </div>
+ </section>
 
- <!-- Script: catálogo (CRUD) usando localStorage -->
  <script>
    (function(){
      const LS_KEY = 'bestfilmes.catalogo';
@@ -171,6 +167,7 @@
        catalog.forEach((m, i) => {
          const card = document.createElement('article');
          card.className = 'movie-card';
+         // ATENÇÃO: MODIFICAÇÃO ABAIXO para incluir a descrição no movie-card__info
          card.innerHTML = `
            <div class="movie-card__media">
              <img src="${m.poster}" alt="Pôster do filme ${escapeHtml(m.title)}" onerror="this.classList.add('is-broken')" />
@@ -182,6 +179,7 @@
            <div class="movie-card__info">
              <h3 class="movie-card__title">${escapeHtml(m.title)}</h3>
              ${m.subtitle ? `<p class="movie-card__subtitle">${escapeHtml(m.subtitle)}</p>` : ''}
+             ${m.description ? `<p class="movie-card__subtitle">${escapeHtml(m.description)}</p>` : ''} 
            </div>`;
          cards.appendChild(card);
        });
@@ -234,7 +232,7 @@
    })();
  </script>
 </body>
-</html> class="section section--light">
+<section id="ingressos" class="section section--light">
    <div class="container">
      <h2 class="section__title">Ingressos</h2>
      <p>Em breve: integração com compra de ingressos. Por enquanto, entre em contato pelo WhatsApp.</p>
@@ -262,4 +260,3 @@
  </footer>
 </body>
 </html>
-
