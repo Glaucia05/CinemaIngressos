@@ -14,7 +14,7 @@ body{
 
 
 .for-group{
-
+color: white;
 }
 
 #nome{
@@ -37,12 +37,12 @@ padding: 15px;
 #caixacadastro{
     display: flex;
     padding: 50px;
-    background-color: #b6dbf4;
+    background-color: #0a0a34;
     width: 40%;
     height: 40%;
     align-items: right;
     flex-direction: column;
-    border: solid 2px black; 
+    border: solid 5px black; 
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 
 
@@ -64,6 +64,7 @@ input {
   width: 200px;
   height: 1px; 
   background-color: rgb(246, 237, 255);
+border: solid 4px black; 
 
 }
 
