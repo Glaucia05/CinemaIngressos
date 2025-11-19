@@ -42,16 +42,20 @@
 <P id="best1">OS MELHORES </P>
 <P id="best2"> DO CINEMA </P>
 
-    <form id="telalogin" class="telalogin">
+    <form id="telalogin" class="telalogin" action="login.php" method="POST">
         <h1 id="login">Login de Acesso</h1>
 
-        <div id="email" ><label for="email"> Email: </label>
-        <input class="entrada" type="email" placeholder=" Digite seu email"></div>
+         <div id="email">
+        <label for="email">Email:</label>
+        <input class="entrada" type="email" name="email" placeholder="Digite seu email" required>
+    </div>
 
-        <div id="senha" ><label for="password"> Senha: </label>
-        <input class="entrada" type="password" placeholder=" Digite sua senha"></div>
+    <div id="senha">
+        <label for="password">Senha:</label>
+        <input class="entrada" type="password" name="senha" placeholder="Digite sua senha" required>
+    </div>
 
-        <div><button id="botao">Entrar</button></div>
+        <div><button type="submit" name="submit" id="botao">Entrar</button></div>
 
    <a class="caminho1" href="cadastro.html">Não tem cadastro? Clique aqui.</a>
 
