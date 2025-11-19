@@ -1,7 +1,6 @@
 <?php
 include_once('conexao.php'); 
 
-//Compara basico, sem criptografia 
 
 
 
@@ -31,7 +30,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         if ($senhaDigitada === $senhaBanco) {
 
             echo "Login OK!";
-            header("Location: sucesso.html"); //redirecionar a pagina principal
+            header("Location: inicio.html"); //redirecionar a pagina principal
             exit();
 
         } else {

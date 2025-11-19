@@ -1,7 +1,7 @@
 <?php
 include_once('conexao.php'); 
 
-//cadastro sem proteção
+
 
 //se houver submit (Aperto do botão) cria variaveis que guardam as entradas
 if (isset($_POST['submit'])) {
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 
  exit(); 
  } 
- //caso n da erro
+ 
  else {
 
  die("ERRO DE INSERÇÃO: " . mysqli_error($conexao));
