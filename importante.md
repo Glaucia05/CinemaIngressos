@@ -3,7 +3,7 @@ http://localhost/cinemaingressos/login.html <- trocando essa parte final pela pa
 
 para o BD funcionar a pasta do seu projeto precisa estar dentro do xampp dentro do htdocs (o php so funciona la dentro). Verifique se o apache do xampp esta ligado.
 
-IMPORTANTE: O projeto em si não trata questões de segurança
+IMPORTANTE: O projeto em si não trata questões de segurança.
 
 Banco de dados utilizado:
 
