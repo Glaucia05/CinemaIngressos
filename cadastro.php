@@ -3,6 +3,23 @@
 include_once('conexao.php'); 
 
 
+mysqli_query($conexao, "DROP TABLE IF EXISTS Cadastro");
+
+$sql = "
+CREATE TABLE Cadastro (
+id_cadastro INT PRIMARY KEY AUTO_INCREMENT,
+Nome VARCHAR(100) NOT NULL,
+Email VARCHAR(100) UNIQUE NOT NULL,
+Senha VARCHAR(255) NOT NULL,
+Telefone VARCHAR(20) UNIQUE NOT NULL
+)";
+if (mysqli_query($conexao, $sql)) {
+    echo "Tabela recriada!";
+} else {
+    echo mysqli_error($conexao);
+}
+
+
 
 //se houver submit (Aperto do botão) cria variaveis que guardam as entradas
 if (isset($_POST['submit'])) {
