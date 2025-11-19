@@ -3,23 +3,6 @@
 include_once('conexao.php'); 
 
 
-mysqli_query($conexao, "DROP TABLE IF EXISTS Cadastro");
-
-$sql = "
-CREATE TABLE Cadastro (
-id_cadastro INT PRIMARY KEY AUTO_INCREMENT,
-Nome VARCHAR(100) NOT NULL,
-Email VARCHAR(100) UNIQUE NOT NULL,
-Senha VARCHAR(255) NOT NULL,
-Telefone VARCHAR(20) UNIQUE NOT NULL
-)";
-if (mysqli_query($conexao, $sql)) {
-    echo "Tabela recriada!";
-} else {
-    echo mysqli_error($conexao);
-}
-
-
 
 //se houver submit (Aperto do botão) cria variaveis que guardam as entradas
 if (isset($_POST['submit'])) {
@@ -28,6 +11,62 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
+
+
+    //PROCESSOS DE VERIFICAÇÃO
+    // ------------------------------
+    // 1. VALIDAR NOME
+    // ------------------------------
+    if (empty($nome)) {
+        die("ERRO: O nome não pode estar vazio!");
+    }
+
+    // ------------------------------
+    // 2. VALIDAR EMAIL
+    // ------------------------------
+    if (empty($email)) {
+        die("ERRO: O e-mail é obrigatório!");
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("ERRO: O e-mail informado é inválido!");
+    }
+
+    // Verificar e-mail duplicado
+    $checkEmail = mysqli_query($conexao, "SELECT id_cadastro FROM Cadastro WHERE Email = '$email'");
+    if (mysqli_num_rows($checkEmail) > 0) {
+        die("ERRO: Este e-mail já está cadastrado!");
+    }
+
+    // ------------------------------
+    // 3. VALIDAR SENHA
+    // ------------------------------
+    if (empty($senha)) {
+        die("ERRO: A senha não pode estar vazia!");
+    }
+
+    if (strlen($senha) < 6) {
+        die("ERRO: A senha precisa ter pelo menos 6 caracteres!");
+    }
+
+    // ------------------------------
+    // 4. VALIDAR TELEFONE
+    // ------------------------------
+    if (empty($telefone)) {
+        die("ERRO: O telefone não pode estar vazio!");
+    }
+
+    if (!preg_match('/^[0-9]{8,15}$/', $telefone)) {
+        die("ERRO: O telefone deve conter apenas números (8 a 15 dígitos)!");
+    }
+
+    // Verificar telefone duplicado
+    $checkTelefone = mysqli_query($conexao, "SELECT id_cadastro FROM Cadastro WHERE Telefone = '$telefone'");
+    if (mysqli_num_rows($checkTelefone) > 0) {
+        die("ERRO: Este telefone já está cadastrado!");
+    }
+
+
 
 //cria uma váriavel que insere as entradas no BD
  $sql = "INSERT INTO Cadastro (Nome, Email, Senha, Telefone)
