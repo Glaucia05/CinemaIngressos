@@ -79,7 +79,8 @@ if (isset($_POST['submit'])) {
 //se ouver a inserção dos dados na tabela:
  if ($result) {
 //redireciona para a página de sucesso
- echo("CADASTRO EFETUADO COM SUCESSO");
+    echo "CADASTRO EFETUADO COM SUCESSO<br>";
+    echo '<a href="login.html">Ir para a página de login</a>';
  exit(); 
  
  } 
