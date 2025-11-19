@@ -79,15 +79,15 @@ if (isset($_POST['submit'])) {
 //se ouver a inserção dos dados na tabela:
  if ($result) {
 //redireciona para a página de sucesso
- header('Location: sucesso.html');
-
+ echo("CADASTRO EFETUADO COM SUCESSO");
  exit(); 
+ 
  } 
  
  else {
 
  die("ERRO DE INSERÇÃO: " . mysqli_error($conexao));
-  header('Location: erro.html');
+  
 
  }
 }
