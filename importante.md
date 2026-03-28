@@ -1,9 +1,10 @@
-Vc so consegue ver funcionando abrindo assim!
-http://localhost/cinemaingressos/login.html <- trocando essa parte final pela pagina que vc quer acessar
+Projeto local!
+Guia de funcionamento para projeto local:
 
-para o BD funcionar a pasta do seu projeto precisa estar dentro do xampp dentro do htdocs (o php so funciona la dentro). Verifique se o apache do xampp esta ligado.
+http://localhost/cinemaingressos/login.html <- trocar parte final pela pagina que quer acessar
 
-IMPORTANTE: O projeto em si não trata questões de segurança.
+para o BD funcionar a pasta do seu projeto precisa estar dentro do xampp dentro do htdocs. Verifique se o apache do xampp esta ligado.
+
 
 Banco de dados utilizado:
 

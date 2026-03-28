@@ -5,7 +5,6 @@ function porCima(obj) {
 obj.style.transform = "scale(1.15)";
 
 
-
 }
 
 function porFora(obj) {
