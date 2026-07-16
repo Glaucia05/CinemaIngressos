@@ -1,0 +1,349 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #480ca8, #4cc9f0);
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+
+
+.button{
+    display:flex;
+    border-radius:50px;
+    color:#fff;
+    font-size:15px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+    z-index:1;
+    background:#3b2cbf;
+    text-decoration:none;
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center; 
+    align-items: center;  
+}
+.button::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#3b2cbf;
+    border-radius:50px;
+    z-index:-2;
+}
+
+.button::before{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0;
+    height:100%;
+    background:#03042c;
+    transition:.3s;
+    border-radius:50px;
+    z-index:-1;
+}
+
+.button:hover{
+    color:white;
+}
+
+.button:hover::before{
+    width:100%;
+}
+.EsqueciSenha {
+    padding-left: 200px;
+    color: black;
+}
+
+#telalogin {
+    background-color: #f3ebeb;
+    display: flex;
+    flex-direction: column;
+
+    height: 50%;
+    width: 30%;
+    margin-top: 140px;
+    margin-bottom: 50px;
+    margin-left: 300px;
+    padding: 50px;
+    z-index: 2;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+
+}
+
+.entrada {
+    border-radius: 30px;
+    height: 30px;
+    border-color: aliceblue;
+}
+
+
+#email {
+    width: 40%;
+    margin-bottom: 20px;
+
+
+
+
+}
+
+#email label {
+    color: black;
+}
+
+#senha {
+    width: 40%;
+
+
+}
+
+#senha label {
+    color: black;
+}
+
+.caminho1 {
+    margin-top: 100px;
+}
+
+.nomesite {
+    position: absolute;
+    font-family: Arial;
+    font-size: 100px;
+    right: 15%;
+    z-index: 2;
+}
+
+.imagemacao {
+    position: absolute;
+    top: 20%;
+    right: 58%;
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+
+}
+
+#imagembordabaixo {
+    position: absolute;
+}
+
+#bordadireita {
+    position: fixed;
+    /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    right: 0;
+    /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;
+    /* não excede a altura da tela */
+    object-fit: cover;
+    /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;
+    background-color: black;
+}
+
+
+#bordaesquerda {
+    position: fixed;
+    /* prende à viewport, não desloca conteúdo */
+    top: 0;
+    left: 0;
+    /* ou left: 0 se for na esquerda */
+    width: 20px;
+    height: 100vh;
+    /* não excede a altura da tela */
+    object-fit: cover;
+    /* ajusta a imagem ao box */
+    z-index: 10;
+    display: block;
+    background-color: black;
+}
+
+#bordacima {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    z-index: 10;
+}
+
+
+#bordabaixo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    z-index: 10;
+}
+
+
+
+
+/* Efeito de brilho atrás */
+.brilho::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(20px);
+    animation: brilho 3s infinite alternate;
+}
+
+/* Animação do brilho */
+@keyframes brilho {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#alt2 {
+    position: absolute;
+    top: 280px;
+    left: 55%;
+    color: white;
+    font-size: 100px;
+    z-index: 99;
+
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    text-shadow: 2px 2px 5px gray;
+}
+
+
+
+#best1 {
+    position: absolute;
+    top: 190px;
+    left: 55%;
+
+    font-size: 80px;
+    z-index: 100;
+
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+    text-shadow: 2px 2px 5px gray;
+
+
+}
+
+
+#best2 {
+    position: absolute;
+    top: 350px;
+    left: 55%;
+
+    font-size: 80px;
+    z-index: 100;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+    text-shadow: 2px 2px 5px gray;
+}
+
+#camera {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    animation: brilho 8s infinite alternate, glow 1s infinite alternate;
+    z-index: 90;
+
+}
+
+@keyframes glow {
+
+    from {
+        filter: drop-shadow(0 0 2px #fff);
+    }
+
+    to {
+        filter: drop-shadow(0 0 10px #ffffff);
+    }
+
+}
+
+#compre {
+    position: absolute;
+    left: 80px;
+    color: white;
+    z-index: 100;
+
+}
+
+#acaomenor {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    z-index: 100;
+}
+
+#www {
+    position: absolute;
+    left: 40px;
+    height: 30px;
+    width: 30px;
+    z-index: 100;
+    color: white;
+}
+
+
+input {
+    width: 200%;
+    padding-left: 10px;
+
+}
+
+
+input::placeholder {
+    color: gray;
+
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------*/
