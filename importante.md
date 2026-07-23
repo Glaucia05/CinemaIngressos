@@ -1,7 +1,7 @@
 Projeto local!
 Guia de funcionamento para projeto local:
 
-http://localhost/cinemaingressos/login.html <- trocar parte final pela pagina que quer acessar
+http://localhost/cinemaingressos/scr/login/login.html <- trocar parte final pela pagina que quer acessar
 
 para o BD funcionar a pasta do seu projeto precisa estar dentro do xampp dentro do htdocs. Verifique se o apache do xampp esta ligado.
 

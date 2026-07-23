@@ -7,7 +7,7 @@ include_once('conexao.php');
 if (isset($_POST['email']) && isset($_POST['senha'])) {
 
     $email = $_POST['email'];
-    $senhaDigitada = $_POST['senha']; // senha digitada
+    $senhaDigitada = $_POST['senha'];
 
     $sql = "SELECT Senha FROM Cadastro WHERE Email = ?";
     $stmt = $conexao->prepare($sql);
