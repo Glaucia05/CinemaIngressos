@@ -14,7 +14,19 @@ body {
     min-height: 100vh;
 }
 
-/* Top black bar, matching the reference screenshot */
+.bottombar{
+   background: #ffffff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 32px;
+    border-bottom: 3px solid #000;
+
+}
+
+
+
 .topbar {
     background: #0d0d0d;
     color: #fff;
@@ -248,6 +260,27 @@ input::placeholder {
     font-weight: 700;
     text-decoration: underline;
 }
+
+.back {
+    display: block;
+    padding: 8px 16px;
+    background: #eee;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: #333;
+    font-family: sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 90%;
+    text-align: center;
+}
+
+.back:hover {
+    border-color: #000;
+    border-radius: 12px;
+}
+
 
 @media (max-width: 500px) {
     h1 {

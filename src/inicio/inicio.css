@@ -264,16 +264,145 @@ img { max-width: 100%; display: block; }
     align-items:center;
 }
 
-.login-box{
-    width:350px;
-    background:#fff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 40px rgba(0,0,0,.3);
+.enter{
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+}
+.enter:hover {
+    background-color: #0056b3;
 }
 
-.login-box input{
-    width:100%;
-    margin:10px 0;
-    padding:12px;
+.enter:active {
+    background-color: #004085;
+}
+
+
+#entrar{
+margin-left: auto;
+}
+.ingressos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 240px));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.ingresso-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingresso-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+.ingresso-card__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.ingresso {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ingresso-card:hover .ingresso {
+  transform: scale(1.05);
+}
+
+.ingresso-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ingresso-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.ingresso-card__desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+}
+
+.ingresso-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ingresso-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ingresso-card__actions a {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.ingresso-card__actions a.trailer-link {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.ingresso-card__actions a.trailer-link:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.ingresso-card__actions a.comprar-link {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.ingresso-card__actions a.comprar-link:hover {
+  filter: brightness(1.1);
+}
+
+.suporte-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .suporte-faq-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -18,29 +18,23 @@
 <body>
  <header class="top-bar" role="banner">
    <div class="top-bar__content">
-     <img src="icons/icone_ingresso.png" alt="Ícone de ingresso" class="top-bar__icon" />
+     <img src="../../icons/icone_ingresso.png" alt="Ícone de ingresso" class="top-bar__icon" />
      <span class="top-bar__text">COMPRE SEUS INGRESSOS AQUI!</span>
-     <a class="btn btn--sm btn--ghost" href="#ingressos" aria-label="Ir para a seção de ingressos">Comprar</a>
-   </div>
- </header>
+     <a class="btn btn--sm btn--ghost" href="" aria-label="Ir para a seção de ingressos">Comprar</a>
 
-
-
-<button id="abrirLogin">Entrar</button>
-
-<div id="modal" class="modal">
-    <div class="login-box">
-        <h2>Login</h2>
-
+<button class="enter" id="entrar" >Entrar</button>
+<div class="modal">
+    <div>
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Senha">
-
         <button>Entrar</button>
+    </div>      
     </div>
-</div>
 
+  <a href="" id="cadastro"  class="enter">Cadastrar</a>
 
-
+   </div>
+ </header>
 
  <main class="hero" id="inicio">
    <div class="container hero__grid">
@@ -63,7 +57,8 @@
      <div class="hero__right" aria-hidden="true">
        <img
          src="https://imgs.search.brave.com/vudDuOoilU0Gwkoohq5jxXVzgFqXWOGbqv-uxv78Nfw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHVtcGtpbi5wdC8y/MDI1LzA2L0VsaW8t/Q2FydGF6LTcxN3gx/MDI0LmpwZw"
-         alt="Pôster do filme Elio" class="poster poster--a" />
+         alt="Pôster do filme Elio" class="poster poster--a" /> 
+         
 
        <img
          src="https://imgs.search.brave.com/utH20Wxy09OASF0sMS5K6i6F2xbU8AiJy6X867s-GkQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFwb2RlY2luZW1h/LmNvbS5ici93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wNS8y/MDI1MDcxNi1zbXVy/ZnMtcG9zdGVyLXBh/cG8tZGUtY2luZW1h/LndlYnA"
@@ -72,49 +67,14 @@
    </div>
  </main>
 
+
  <section id="em-cartaz" class="section section--dark" aria-labelledby="titulo-em-cartaz">
    <div class="container">
      <div class="section__header">
        <h2 class="section__title" id="titulo-em-cartaz">Em cartaz</h2>
-       <div class="admin-controls">
-         <button class="btn btn--dark" id="toggle-edit" type="button" aria-pressed="false">Modo edição</button>
-         <button class="btn btn--primary" id="add-movie" type="button" hidden>Adicionar filme</button>
-       </div>
      </div>
 
      <div id="cards" class="cards-grid" aria-live="polite"></div>
-   </div>
-
-   <div class="modal" id="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-     <div class="modal__dialog" role="document">
-       <header class="modal__header">
-         <h3 id="modal-title" class="modal__title">Adicionar filme</h3>
-         <button class="modal__close" type="button" id="modal-close" aria-label="Fechar">✕</button>
-       </header>
-       <form id="movie-form" class="modal__body">
-         <input type="hidden" id="movie-index" />
-         <label class="field">
-           <span>Título</span>
-           <input id="movie-title" type="text" required placeholder="Ex.: Smurfs 2025" />
-         </label>
-         <label class="field">
-           <span>Subtítulo (opcional)</span>
-           <input id="movie-subtitle" type="text" placeholder="Aventura / 1h42" />
-         </label>
-         <label class="field">
-           <span>URL do pôster</span>
-           <input id="movie-poster" type="url" required placeholder="https://.../poster.jpg" />
-         </label>
-         <label class="field">
-           <span>Descrição</span>
-           <textarea id="movie-description" rows="4" placeholder="Sinopse curta"></textarea>
-         </label>
-         <footer class="modal__footer">
-           <button class="btn btn--outline" type="button" id="modal-cancel">Cancelar</button>
-           <button class="btn btn--primary" type="submit">Salvar</button>
-         </footer>
-       </form>
-     </div>
    </div>
  </section>
 
@@ -122,19 +82,7 @@
    (function(){
      const LS_KEY = 'bestfilmes.catalogo';
      const cards = document.getElementById('cards');
-     const toggleBtn = document.getElementById('toggle-edit');
-     const addBtn = document.getElementById('add-movie');
-     const modal = document.getElementById('movie-modal');
-     const closeModalBtn = document.getElementById('modal-close');
-     const cancelBtn = document.getElementById('modal-cancel');
-     const form = document.getElementById('movie-form');
-     const idxInput = document.getElementById('movie-index');
-     const titleInput = document.getElementById('movie-title');
-     const subtitleInput = document.getElementById('movie-subtitle');
-     const posterInput = document.getElementById('movie-poster');
-     const descInput = document.getElementById('movie-description');
 
-     let editMode = false;
      let catalog = load();
      if (!Array.isArray(catalog) || catalog.length === 0) {
        // Seed com dois exemplos (mudar depois)
@@ -146,7 +94,7 @@
          },
          {
            title: 'Smurfs', subtitle: 'Animação / 1h32',
-           poster: 'https://imgs.search.brave.com/utH20Wxy09OASF0sMS5K6i6F2xbU8AiJy6X867s-GkQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFwb2RlY2luZW1h/LmNvbS5ici93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wNS8y/MDI1MDcxNi1zbXVy/ZnMtcG9zdGVyLXBh/cG8tZGUtY2luZW1h/LndlYnA',
+           poster: 'https://imgs.search.brave.com/utH20Wxy09OASF0sMS5K6i6F2xbU8AiJy6F867s-GkQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFwb2RlY2luZW1h/LmNvbS5ici93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wNS8y/MDI1MDcxNi1zbXVy/ZnMtcG9zdGVyLXBh/cG8tZGUtY2luZW1h/LndlYnA',
            description: 'Os pequenos azuis em uma nova missão.'
          }
        ];
@@ -155,44 +103,14 @@
 
      render();
 
-     // Eventos
-     toggleBtn.addEventListener('click', () => {
-       editMode = !editMode;
-       toggleBtn.setAttribute('aria-pressed', String(editMode));
-       addBtn.hidden = !editMode;
-       render();
-     });
-     addBtn.addEventListener('click', () => openModal());
-     closeModalBtn.addEventListener('click', hideModal);
-     cancelBtn.addEventListener('click', hideModal);
-
-     form.addEventListener('submit', (e) => {
-       e.preventDefault();
-       const movie = {
-         title: titleInput.value.trim(),
-         subtitle: subtitleInput.value.trim(),
-         poster: posterInput.value.trim(),
-         description: descInput.value.trim()
-       };
-       const i = idxInput.value;
-       if (i === '') { catalog.push(movie); }
-       else { catalog[Number(i)] = movie; }
-       save(); hideModal(); render();
-     });
-
      function render(){
        cards.innerHTML = '';
-       catalog.forEach((m, i) => {
+       catalog.forEach((m) => {
          const card = document.createElement('article');
          card.className = 'movie-card';
-         // ATENÇÃO: MODIFICAÇÃO ABAIXO para incluir a descrição no movie-card__info
          card.innerHTML = `
            <div class="movie-card__media">
              <img src="${m.poster}" alt="Pôster do filme ${escapeHtml(m.title)}" onerror="this.classList.add('is-broken')" />
-             ${editMode ? `<div class="card-actions">
-               <button class="card-btn edit" data-i="${i}" aria-label="Editar ${escapeHtml(m.title)}">✎</button>
-               <button class="card-btn del" data-i="${i}" aria-label="Excluir ${escapeHtml(m.title)}">🗑</button>
-             </div>` : ''}
            </div>
            <div class="movie-card__info">
              <h3 class="movie-card__title">${escapeHtml(m.title)}</h3>
@@ -201,41 +119,6 @@
            </div>`;
          cards.appendChild(card);
        });
-
-       if (editMode) {
-         cards.querySelectorAll('.card-btn.edit').forEach(btn=>btn.addEventListener('click', onEdit));
-         cards.querySelectorAll('.card-btn.del').forEach(btn=>btn.addEventListener('click', onDelete));
-       }
-     }
-
-     function onEdit(e){
-       const i = Number(e.currentTarget.dataset.i);
-       const m = catalog[i];
-       openModal(m, i);
-     }
-     function onDelete(e){
-       const i = Number(e.currentTarget.dataset.i);
-       const m = catalog[i];
-       if (confirm(`Excluir "${m.title}"?`)) {
-         catalog.splice(i,1); save(); render();
-       }
-     }
-
-     function openModal(data = null, index = null){
-       modal.hidden = false; modal.classList.add('is-open');
-       document.body.style.overflow = 'hidden';
-       idxInput.value = index === null ? '' : String(index);
-       titleInput.value = data?.title || '';
-       subtitleInput.value = data?.subtitle || '';
-       posterInput.value = data?.poster || '';
-       descInput.value = data?.description || '';
-       document.getElementById('modal-title').textContent = data ? 'Editar filme' : 'Adicionar filme';
-       setTimeout(()=>titleInput.focus(), 0);
-     }
-     function hideModal(){
-       modal.classList.remove('is-open');
-       modal.hidden = true; document.body.style.overflow = '';
-       form.reset(); idxInput.value = '';
      }
 
      function load(){
@@ -250,24 +133,102 @@
    })();
  </script>
 </body>
-<section id="ingressos" class="section section--light">
-   <div class="container">
-     <h2 class="section__title">Ingressos</h2>
-     <p>Em breve: integração com compra de ingressos. Por enquanto, entre em contato pelo WhatsApp.</p>
-     <a href="https://wa.me/5541999999999" class="btn btn--dark" target="_blank" rel="noopener">Falar no WhatsApp</a>
-   </div>
- </section>
 
- <section id="trailers" class="section">
-   <div class="container">
-     <h2 class="section__title">Trailers</h2>
-     <p>Curadoria dos trailers mais aguardados — atualize esta área com vídeos incorporados do YouTube.</p>
-   </div>
+<section id="ingressos" class="section section--light">
+  <div class="container">
+
+    <h2 class="section__title">Ingressos</h2>
+
+    <div class="ingressos-grid">
+
+      <article class="ingresso-card">
+        <div class="ingresso-card__poster">
+          <img
+            src="https://imgs.search.brave.com/vudDuOoilU0Gwkoohq5jxXVzgFqXWOGbqv-uxv78Nfw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHVtcGtpbi5wdC8y/MDI1LzA2L0VsaW8t/Q2FydGF6LTcxN3gx/MDI0LmpwZw"
+            alt="Pôster do filme Elio" class="ingresso" />
+        </div>
+        <div class="ingresso-card__body">
+          <h3 class="ingresso-card__title">Elio</h3>
+          <p class="ingresso-card__desc">
+            Elio é um filme de aventura animado da Pixar de 2025 sobre um menino de 11 anos que se torna embaixador acidental da Terra em uma sociedade intergaláctica.
+          </p>
+          <div class="ingresso-card__actions">
+            <a href="" class="btn btn--primary">Trailer</a>
+            <a href="" class="btn btn--primary">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ingresso-card">
+        <div class="ingresso-card__poster">
+          <img
+            src="https://imgs.search.brave.com/utH20Wxy09OASF0sMS5K6i6F2xbU8AiJy6X867s-GkQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGFwb2RlY2luZW1h/LmNvbS5ici93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wNS8y/MDI1MDcxNi1zbXVy/ZnMtcG9zdGVyLXBh/cG8tZGUtY2luZW1h/LndlYnA"
+            alt="Pôster do filme Smurfs" class="ingresso" />
+        </div>
+        <div class="ingresso-card__body">
+          <h3 class="ingresso-card__title">Smurfs</h3>
+          <p class="ingresso-card__desc">
+            Nesse novo filme animado das mais adoráveis criaturas azuis, Papai Smurf é raptado pelos irmãos e bruxos malvados Razamel e Gargamel. Com a vila em perigo, Smurfette lidera os smurfs num missão para o mundo real com o intuito de salvar o Papai Smurf.
+          </p>
+          <div class="ingresso-card__actions">
+            <a href="" class="btn btn--primary">Trailer</a>
+            <a href="" class="btn btn--primary">Comprar</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+<section id="suporte-faq" class="section">
+  <div class="container">
+    <div class="suporte-faq-grid">
+
+      <div class="suporte-faq-col">
+        <h2 class="section__title">Suporte</h2>
+        <p>Precisa de ajuda? Fale com nosso suporte.</p>
+
+        <ul>
+          <li>WhatsApp: (41) 99999-9999</li>
+          <li>Telefone: (41) 99999-9999</li>
+          <li>E-mail: contato@seusite.com</li>
+        </ul>
+
+        <a href="https://wa.me/5541999999999" class="btn btn--dark" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a href="tel:+5541999999999" class="btn btn--dark">Ligar agora</a>
+        <a href="mailto:contato@seusite.com" class="btn btn--dark">Enviar e-mail</a>
+      </div>
+
+      <div class="suporte-faq-col">
+        <h2 class="section__title">Perguntas Frequentes</h2>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary class="faq__question">Como faço para comprar um ingresso?</summary>
+            <p class="faq__answer">Clique no botão "Comprar" no card do filme desejado e siga as instruções.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Posso cancelar minha compra?</summary>
+            <p class="faq__answer">Sim, entre em contato com nosso suporte pelo WhatsApp ou e-mail.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">Quais formas de pagamento são aceitas?</summary>
+            <p class="faq__answer">Aceitamos cartão de crédito, débito e Pix.</p>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
  </section>
 
  <footer class="footer" role="contentinfo">
    <div class="container footer__grid">
-     <p class="footer__copy">&copy; 2025 Best Filmes — Todos os direitos reservados.</p>
+     <p class="footer__copy">&copy; 2026 Best Filmes — Todos os direitos reservados.</p>
      <nav class="footer__nav" aria-label="Rodapé">
        <a href="#inicio">Início</a>
        <a href="#ingressos">Ingressos</a>
@@ -277,5 +238,4 @@
    </div>
  </footer>
  <script src="inicio.js"></script>
-</body>
 </html>
