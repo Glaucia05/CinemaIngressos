@@ -2,27 +2,38 @@
 
 include_once("../../conexao.php");
 
-
-$Email = $_POST['email'] ?? ''; 
+$Email = $_POST['email'] ?? '';
 $Senha = $_POST['senha'] ?? '';
 
- // 1. Buscar o usuário no banco 
-$Senha_banco = mysqli_query($conexao, "SELECT Senha FROM cadastro WHERE Email = '$Email'");
-// valor de exemplo 
 
-$dado = mysqli_fetch_assoc($Senha_banco);
+//Prepared Statements
+// Criando uma instrução preparada
+$stmt = mysqli_stmt_init($conexao);
 
-// 2. Verificar a senha 
-if (password_verify($Senha, $dado['Senha'])) {    
-	// Senha correta    
-	echo "Login permitido";  
+// Preparar a instrução
+if (!mysqli_stmt_prepare($stmt, "SELECT Senha FROM cadastro WHERE Email = ?")) {
+    echo "Instrução SQL falhou";
+} else {
 
-	// Aqui você inicia a sessão, salva dados na session, etc. 
-  
-} else {    
-	// Senha incorreta    
-	echo "E-mail ou senha inválidos"; 
+    // Associar o parâmetro
+    mysqli_stmt_bind_param($stmt, "s", $Email);
+
+    // Executar
+    mysqli_stmt_execute($stmt);
+
+    // Obter o resultado
+    $result = mysqli_stmt_get_result($stmt);
+
+    $dado = mysqli_fetch_assoc($result);
+
+    if (password_verify($Senha, $dado['Senha'])) {
+        echo "Login permitido";
+    } else {
+        echo "E-mail ou senha inválidos";
+    }
 }
+
+
 
 
 
