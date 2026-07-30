@@ -23,13 +23,24 @@
      <a class="btn btn--sm btn--ghost" href="" aria-label="Ir para a seção de ingressos">Comprar</a>
 
 <button class="enter" id="entrar" >Entrar</button>
-<div class="modal">
-    <div>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Senha">
-        <button>Entrar</button>
-    </div>      
-    </div>
+<div class="modal" id="modalLogin" hidden> 
+  
+  
+<div class="login-page">
+  <div class="form">
+     
+    <form class="login-form">
+      <input type="text" placeholder="Email:"/>
+      <input type="password" placeholder="Senha:"/>
+      <button>login</button>
+      <p class="message">Não está cadastrado? <a href="#">Criar uma conta</a></p>
+    </form>
+  </div>
+</div>
+
+
+</div>
+ 
 
   <a href="" id="cadastro"  class="enter">Cadastrar</a>
 
@@ -132,7 +143,7 @@
      }
    })();
  </script>
-</body>
+
 
 <section id="ingressos" class="section section--light">
   <div class="container">
@@ -238,4 +249,5 @@
    </div>
  </footer>
  <script src="inicio.js"></script>
+ </body>
 </html>

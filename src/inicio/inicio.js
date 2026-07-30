@@ -1,11 +1,13 @@
-const modal = document.getElementById("modal");
+const botaoEntrar = document.getElementById('entrar');
+const modal = document.getElementById('modalLogin');
 
-document.getElementById("abrirLogin").onclick = () =>{
-    modal.style.display = "flex";
-}
 
-modal.onclick = (e)=>{
-    if(e.target === modal){
-        modal.style.display = "none";
-    }
-}
+botaoEntrar.addEventListener('click', () => {
+  modal.hidden = false;
+});
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.hidden = true;
+  }
+});
